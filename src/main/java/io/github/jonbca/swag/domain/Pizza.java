@@ -7,6 +7,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 import java.util.Set;
 
 @JsonTypeName("Pizza")
@@ -29,5 +30,26 @@ public class Pizza extends Food {
         return MoreObjects.toStringHelper(this)
                           .add("toppings", toppings)
                           .toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Pizza pizza = (Pizza) o;
+        return Objects.equals(toppings, pizza.toppings);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), toppings);
     }
 }

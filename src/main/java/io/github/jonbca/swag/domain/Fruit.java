@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.google.common.base.MoreObjects;
 
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @JsonTypeName("Fruit")
 public class Fruit extends Food {
@@ -27,5 +28,26 @@ public class Fruit extends Food {
         return MoreObjects.toStringHelper(this)
                           .add("kind", kind)
                           .toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Fruit fruit = (Fruit) o;
+        return Objects.equals(kind, fruit.kind);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), kind);
     }
 }
