@@ -1,7 +1,9 @@
 package io.github.jonbca.swag.domain;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.google.common.base.MoreObjects;
 
+@JsonTypeName("Barbecue")
 public class Barbecue extends Food {
     private final String animal;
 
@@ -10,9 +12,8 @@ public class Barbecue extends Food {
         this.animal = animal;
     }
 
-    @Override
-    public PreferenceType getPreferenceType() {
-        return PreferenceType.BARBECUE;
+    public String getAnimal() {
+        return animal;
     }
 
     @Override

@@ -1,21 +1,25 @@
 package io.github.jonbca.swag.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.google.common.base.MoreObjects;
 
 import javax.validation.constraints.NotNull;
 
+@JsonTypeName("Fruit")
 public class Fruit extends Food {
     private final String kind;
 
-    public Fruit(String name, String kind) {
+    @JsonCreator
+    public Fruit(@JsonProperty("name") String name, @JsonProperty("kind") String kind) {
         super(name);
         this.kind = kind;
     }
 
-    @Override
     @NotNull
-    public PreferenceType getPreferenceType() {
-        return PreferenceType.FRUIT;
+    public String getKind() {
+        return kind;
     }
 
     @Override
