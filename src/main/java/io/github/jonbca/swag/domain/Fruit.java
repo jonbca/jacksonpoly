@@ -24,10 +24,8 @@ public class Fruit extends Food {
     }
 
     @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                          .add("kind", kind)
-                          .toString();
+    public PreferenceType getFoodPreference() {
+        return PreferenceType.FRUIT_TYPE;
     }
 
     @Override
@@ -49,5 +47,13 @@ public class Fruit extends Food {
     public int hashCode() {
 
         return Objects.hash(super.hashCode(), kind);
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                          .add("kind", kind)
+                          .add("name", name)
+                          .toString();
     }
 }

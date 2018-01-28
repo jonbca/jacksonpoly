@@ -22,10 +22,8 @@ public class Barbecue extends Food {
     }
 
     @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                          .add("animal", animal)
-                          .toString();
+    public PreferenceType getFoodPreference() {
+        return PreferenceType.BARBECUE_TYPE;
     }
 
     @Override
@@ -45,7 +43,14 @@ public class Barbecue extends Food {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(super.hashCode(), animal);
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                          .add("animal", animal)
+                          .add("name", name)
+                          .toString();
     }
 }

@@ -15,7 +15,8 @@ public class Pizza extends Food {
     private final ImmutableSet<String> toppings;
 
     @JsonCreator
-    public Pizza(@JsonProperty("name") String name, @JsonProperty("toppings") Set<String> toppings) {
+    public Pizza(@JsonProperty("name") String name,
+                 @JsonProperty("toppings") Set<String> toppings) {
         super(name);
         this.toppings = ImmutableSet.copyOf(toppings);
     }
@@ -26,10 +27,8 @@ public class Pizza extends Food {
     }
 
     @Override
-    public String toString() {
-        return MoreObjects.toStringHelper(this)
-                          .add("toppings", toppings)
-                          .toString();
+    public PreferenceType getFoodPreference() {
+        return PreferenceType.PIZZA_TYPE;
     }
 
     @Override
@@ -51,5 +50,13 @@ public class Pizza extends Food {
     public int hashCode() {
 
         return Objects.hash(super.hashCode(), toppings);
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                          .add("toppings", toppings)
+                          .add("name", name)
+                          .toString();
     }
 }
