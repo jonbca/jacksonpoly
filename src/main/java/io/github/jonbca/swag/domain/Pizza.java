@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.Set;
 
-@JsonTypeName("Pizza")
+@JsonTypeName("PIZZA_TYPE")
 public class Pizza extends Food {
     private final ImmutableSet<String> toppings;
 

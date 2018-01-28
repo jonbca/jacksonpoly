@@ -8,7 +8,7 @@ import com.google.common.base.MoreObjects;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
-@JsonTypeName("Fruit")
+@JsonTypeName("FRUIT_TYPE")
 public class Fruit extends Food {
     private final String kind;
 

@@ -7,7 +7,7 @@ import com.google.common.base.MoreObjects;
 
 import java.util.Objects;
 
-@JsonTypeName("Barbecue")
+@JsonTypeName("BARBECUE_TYPE")
 public class Barbecue extends Food {
     private final String animal;
 

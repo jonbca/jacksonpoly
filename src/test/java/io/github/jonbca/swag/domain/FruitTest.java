@@ -27,6 +27,6 @@ public class FruitTest {
         JsonNode asNode = mapper.valueToTree(fruitAsFood);
 
         assertThat(asNode.get("name").asText()).isEqualTo("strawberry");
-        assertThat(asNode.get("preferenceType").asText()).isEqualTo("Fruit");
+        assertThat(asNode.get("preferenceType").asText()).isEqualTo("FRUIT_TYPE");
     }
 }
