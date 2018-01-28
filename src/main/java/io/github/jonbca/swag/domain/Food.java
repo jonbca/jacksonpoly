@@ -1,13 +1,12 @@
 package io.github.jonbca.swag.domain;
 
-import com.fasterxml.jackson.annotation.*;
-import com.google.common.base.MoreObjects;
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
-
-import static com.fasterxml.jackson.annotation.JsonProperty.Access.READ_WRITE;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
