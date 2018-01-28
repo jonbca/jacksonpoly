@@ -21,22 +21,4 @@ public class FoodResource {
         LOG.info("Passed food parameter {}", food);
         return Response.ok(food).build();
     }
-
-//    @POST
-//    public Response savePizzaPreference(@Valid @RequestBody Pizza pizza) {
-//        LOG.info("Called the pizza {}", pizza);
-//        return Response.ok().build();
-//    }
-//
-//    @POST
-//    public Response saveFruitPreference(@Valid @RequestBody Fruit fruit) {
-//        LOG.info("Called the fruit {}", fruit);
-//        return Response.ok().build();
-//    }
-//
-//    @POST
-//    public Response saveBarbecuePreference(@Valid @RequestBody Barbecue barbecue) {
-//        LOG.info("Called the barbecue {}", barbecue);
-//        return Response.ok().build();
-//    }
 }
