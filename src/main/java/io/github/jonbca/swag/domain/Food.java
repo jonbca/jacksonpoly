@@ -1,17 +1,15 @@
 package io.github.jonbca.swag.domain;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.*;
 import com.google.common.base.MoreObjects;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
-        property = "preferenceType")
+        property = "foodPreference")
 @JsonSubTypes({@JsonSubTypes.Type(Fruit.class),
                @JsonSubTypes.Type(Barbecue.class),
                @JsonSubTypes.Type(Pizza.class)})

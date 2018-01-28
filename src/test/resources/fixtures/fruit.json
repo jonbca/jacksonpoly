@@ -1,5 +1,5 @@
 {
-  "preferenceType": "FRUIT_TYPE",
+  "foodPreference": "FRUIT_TYPE",
   "name": "strawberry",
   "kind": "bush"
 }

@@ -1,7 +1,7 @@
 package io.github.jonbca.swag.domain;
 
 public enum PreferenceType {
-    FRUIT,
-    PIZZA,
-    BARBECUE
+    FRUIT_TYPE,
+    PIZZA_TYPE,
+    BARBECUE_TYPE
 }
